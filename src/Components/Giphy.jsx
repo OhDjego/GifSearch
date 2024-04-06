@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import { useGiphySearch } from "../hooks/useGiphySearch";
+import { Link } from "react-router-dom";
+import { LazyLoadImage } from 'react-lazy-load-image-component'; 
+import 'react-lazy-load-image-component/src/effects/blur.css'; 
 
 const GiphyPage = () => {
   const [query, setQuery] = useState("");
   const [gifs, setGifs] = useState([]);
   const { searchGifs } = useGiphySearch();
-  const [favorites, setFavorites] = useState([]) 
 
 
   const handleSearch = async () => {
@@ -27,25 +29,27 @@ const GiphyPage = () => {
           type="text"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          placeholder="What are you looking for?"
-          className="p-4 rounded-md "
+          placeholder="Find your Gif"
+          className="p-4 rounded-md w-[20vh] "
         />
 
     
-          <button className="px-4 py-2 text-white bg-purple-500 rounded hover:bg-purple-700 focus:outline-none" onClick={handleSearch}>Search</button>
-     
+          <button className="text-white mt-8 flex hover:cursor-pointer justify-center  p-4 text-2xl w-[20vh] rounded-lg hover:shadow-[0_0_50px_theme('colors.purple.700')] shadow-[0_0_10px_theme('colors.purple.700')]" onClick={handleSearch}>Search</button>
+          <Link to="/favorites">
+          <button className="text-white mt-4 flex hover:cursor-pointer justify-center  p-4 text-xl w-[20vh] rounded-lg hover:shadow-[0_0_50px_theme('colors.purple.700')] shadow-[0_0_10px_theme('colors.purple.700')]">Your Favorites</button>
+          </Link> 
       </div>
      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-4 w-[50%] ">
         {gifs.map((gifs) => (
           <div key={gifs.id} className="relative">
-            <img
+            <LazyLoadImage
               src={gifs.images.fixed_height.url}
               alt="GIF"
               className="w-full rounded-md h-[25vh]"
             />
            
             <button
-              className="absolute tracking-wider p-4 text-white bg-purple-700 rounded-full top-2 right-2 hover:shadow-[0_0_40px_theme('colors.white')] focus:outline-none"
+              className="absolute tracking-wide p-2 text-sm text-black bg-white rounded-full top-2 right-2 hover:shadow-[0_0_40px_theme('colors.white')] focus:outline-none"
               onClick={() => addToFavorites(gifs)} 
               
             >
@@ -59,5 +63,6 @@ const GiphyPage = () => {
 };
 
 export default GiphyPage;
+
 
 

@@ -4,6 +4,7 @@ import HomePage from './Components/Home'
 
 import GiphyPage from './Components/Giphy'
 import { QueryClient, QueryClientProvider } from 'react-query'
+import FavoritesPage from './Components/Favorites'
 
 
 const queryClient = new QueryClient()
@@ -17,6 +18,7 @@ function App() {
     <Routes>
       <Route path='/' element={<HomePage />} />
       <Route path='/giphy' element={<GiphyPage />} />
+      <Route path='/favorites' element={<FavoritesPage />} />
     </Routes>
    </BrowserRouter>
    </QueryClientProvider>
