@@ -6,10 +6,10 @@ const HomePage = () => {
   return (
     <div className="flex flex-col items-center justify-center w-screen h-screen gap-16 bg-black">
       <div className="flex items-center justify-center">
-        <p className="text-3xl text-white">Are you looking for a GIF ? </p>
+        <h1>Are you looking for a GIF ? </h1>
       </div>
         <Link to="/giphy">
-        <button className="text-white mt-8 w-[30vh] flex hover:cursor-pointer justify-center  p-8 text-2xl  rounded-lg hover:shadow-[0_0_50px_theme('colors.purple.700')] shadow-[0_0_10px_theme('colors.purple.700')]">Find a Gif</button>
+        <button className="text-white mt-8 w-[30vh] flex hover:cursor-pointer justify-center  p-8 text-2xl  rounded-lg hover:shadow-[0_0_50px_theme('colors.purple.700')] shadow-[0_0_10px_theme('colors.purple.700')]">Find your Gif</button>
         </Link>
       
         <Link to="/favorites">
