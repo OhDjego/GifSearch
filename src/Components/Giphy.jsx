@@ -12,6 +12,7 @@ const GiphyPage = () => {
   const handleSearch = async () => {
     const foundGifs = await searchGifs(query);
     setGifs(foundGifs);
+    setQuery("");
   };
 
   const addToFavorites = (gif) => {
@@ -28,6 +29,11 @@ const GiphyPage = () => {
           onChange={(e) => setQuery(e.target.value)}
           placeholder="Find your Gif"
           className="p-4 rounded-md w-[40vh] sm:w-[30vh] text-md md:text-xl"
+          onKeyDown={(e) => {
+            if (e.key === "Enter") {
+              handleSearch();
+            }
+          }}
         />
 
         <button
@@ -52,7 +58,7 @@ const GiphyPage = () => {
             />
 
             <button
-              className="absolute tracking-wide p-2 text-sm text-black bg-white rounded-full top-2 right-2 hover:shadow-[0_0_40px_theme('colors.white')] focus:outline-none"
+              className="absolute tracking-wide p-2 text-sm text-black bg-white rounded-full top-2 right-2 focus:shadow-[0_0_40px_theme('colors.white')] focus:outline-none"
               onClick={() => addToFavorites(gifs)}
             >
               Favorite

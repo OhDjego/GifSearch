@@ -29,8 +29,8 @@ const Favorites = () => {
         </Link>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-[70%] mt-8 sm:w-[50%]">
-        {favorites.map((gif) => (
-          <div key={gif.id} className="relative">
+        {favorites.map((gif, index) => (
+          <div key={index} className="relative">
             <LazyLoadImage
               src={gif.images.fixed_height.url}
               alt="GIF"
