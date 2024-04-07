@@ -24,22 +24,22 @@ const GiphyPage = () => {
 
   return (
     <div className="flex flex-col items-center mt-20 ">
-      <div className="flex bg-purple rounded-lg shadow-[0_0_40px_theme('colors.purple.700')] item-center w-[50%] flex-col gap-8 justify-center items-center p-8 mb-4">
+      <div className="flex bg-purple rounded-lg shadow-[0_0_40px_theme('colors.purple.700')] item-center w-[90%] sm:w-[50%] flex-col gap-8 justify-center items-center p-8 mb-4">
         <input
           type="text"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder="Find your Gif"
-          className="p-4 rounded-md w-[20vh] "
+          className="p-4 rounded-md w-[40vh] sm:w-[30vh] text-md md:text-xl"
         />
 
     
-          <button className="text-white mt-8 flex hover:cursor-pointer justify-center  p-4 text-2xl w-[20vh] rounded-lg hover:shadow-[0_0_50px_theme('colors.purple.700')] shadow-[0_0_10px_theme('colors.purple.700')]" onClick={handleSearch}>Search</button>
+          <button className="button hover:shadow-[0_0_50px_theme('colors.purple.700')]" onClick={handleSearch}>Search</button>
           <Link to="/favorites">
-          <button className="text-white mt-4 flex hover:cursor-pointer justify-center  p-4 text-xl w-[20vh] rounded-lg hover:shadow-[0_0_50px_theme('colors.purple.700')] shadow-[0_0_10px_theme('colors.purple.700')]">Your Favorites</button>
+          <button className="button hover:shadow-[0_0_50px_theme('colors.purple.700')] ">Your Favorites</button>
           </Link> 
       </div>
-     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-4 w-[50%] ">
+     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8 w-[70%] sm:w-[50%]">
         {gifs.map((gifs) => (
           <div key={gifs.id} className="relative">
             <LazyLoadImage
