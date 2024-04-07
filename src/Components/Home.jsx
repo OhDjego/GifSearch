@@ -8,7 +8,7 @@ const HomePage = () => {
         <h1>Are you looking for a GIF ? </h1>
       </div>
       <Link to="/giphy">
-        <button className="text-white mt-8 w-[30vh] flex hover:cursor-pointer justify-center  p-8 text-2xl  rounded-lg hover:shadow-[0_0_50px_theme('colors.pink.500')] shadow-[0_0_10px_theme('colors.pink.500')]">
+        <button className="text-white mt-8 w-[30vh] flex hover:cursor-pointer justify-center  p-8 text-2xl  rounded-lg hover:shadow-[0_0_60px_theme('colors.pink.500')] shadow-[0_0_30px_theme('colors.pink.500')]">
           Find your Gif
         </button>
       </Link>
