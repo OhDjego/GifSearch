@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .button {
-  @apply text-white mt-8 flex hover:cursor-pointer justify-center p-4 text-lg md:text-2xl w-[40vh] sm:w-[30vh] rounded-lg shadow-[0_0_10px_theme('colors.purple.700')];
+  @apply text-white mt-8 flex hover:cursor-pointer justify-center p-4 text-lg md:text-2xl w-[40vh] sm:w-[30vh] rounded-lg shadow-[0_0_10px_theme('colors.pink.500')];
 }
 
 h1 {
@@ -18,21 +18,58 @@ h1 {
 h1::after {
   content: "";
   position: absolute;
-  background-color: #805ad5;
+  background-color: #ff7f00;
   height: 5px;
   width: 0;
   left: 0;
   bottom: -10px;
-  transition: width 0.3s;
+  transition: box-shadow 0.3s, width 0.3s;
   border-radius: 50px;
+  background-color: #ff7f00;
+  box-shadow: 0 0 0 #f3eb00;
 }
 
 h1:hover::after {
   width: 100%;
+  box-shadow: 0 0 50px #f3eb00;
 }
 
 @media (max-width: 780px) {
-    h1{
+  h1 {
     font-size: 20px;
-    }
+  }
+}
+
+h2 {
+  position: relative;
+  text-decoration: none;
+  color: white;
+  letter-spacing: 0.5px;
+  font-size: 30px;
+  text-align: center;
+}
+
+h2::after {
+  content: "";
+  position: absolute;
+  background-color: #319795;
+  height: 5px;
+  width: 0;
+  left: 0;
+  bottom: -10px;
+  transition: box-shadow 0.3s, width 0.3s;
+  border-radius: 50px;
+  background-color: #319795;
+  box-shadow: 0 0 0 #f3eb00;
+}
+
+h2:hover::after {
+  width: 100%;
+  box-shadow: 0 0 50px #f3eb00;
+}
+
+@media (max-width: 780px) {
+  h2 {
+    font-size: 20px;
+  }
 }
